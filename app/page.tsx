@@ -1,4 +1,6 @@
+import * as React from "react"
 import Link from 'next/link'
+import Image from 'next/image'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { ArrowRight, Heart, MessageCircle, Trophy } from 'lucide-react'
@@ -42,11 +44,21 @@ export default function Home() {
       {/* Testimonial Section */}
       <section className="py-20 px-4">
         <h2 className="text-3xl font-bold text-center mb-12">用户心得</h2>
-        <div className="max-w-4xl mx-auto">
-          <Card>
-            <CardHeader>
-              <CardTitle>小明，25岁</CardTitle>
-              <CardDescription>软件工程师</CardDescription>
+        <div className="flex gap-6 overflow-x-auto pb-4 max-w-6xl mx-auto">
+          <Card className="min-w-[350px] transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+            <CardHeader className="flex flex-row gap-4 items-start">
+              <div className="relative w-16 h-16 rounded-full overflow-hidden">
+                <Image
+                  src="/avatar/xiaoming.jpg"
+                  alt="小明的头像"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div>
+                <CardTitle>小明，25岁</CardTitle>
+                <CardDescription>软件工程师</CardDescription>
+              </div>
             </CardHeader>
             <CardContent>
               <p className="text-lg italic">
@@ -55,16 +67,47 @@ export default function Home() {
               </p>
             </CardContent>
           </Card>
-          <Card>
-            <CardHeader>
-              <CardTitle>小红，23岁</CardTitle>
-              <CardDescription>学生</CardDescription>
+          <Card className="min-w-[350px] transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+            <CardHeader className="flex flex-row gap-4 items-start">
+              <div className="relative w-16 h-16 rounded-full overflow-hidden">
+                <Image
+                  src="/avatar/xiaohong.jpg"
+                  alt="小红的头像"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div>
+                <CardTitle>小红，23岁</CardTitle>
+                <CardDescription>学生</CardDescription>
+              </div>
             </CardHeader>
-            
             <CardContent>
               <p className="text-lg italic">
                 "舔狗救赎帮助我更好地理解了舔狗行为的根源，并提供了有效的解决方案。
                 我现在能够更自信地表达自己，不再害怕失去。"
+              </p>
+            </CardContent>
+          </Card>
+          <Card className="min-w-[350px] transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+            <CardHeader className="flex flex-row gap-4 items-start">
+              <div className="relative w-16 h-16 rounded-full overflow-hidden">
+                <Image
+                  src="/avatar/xiaoli.jpg"
+                  alt="小李的头像"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div>
+                <CardTitle>小李，27岁</CardTitle>
+                <CardDescription>设计师</CardDescription>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="text-lg italic">
+                "通过AI分析和建议，我学会了如何在保持真诚的同时不失自我。
+                这让我在社交和工作中都获得了更多的尊重。"
               </p>
             </CardContent>
           </Card>
