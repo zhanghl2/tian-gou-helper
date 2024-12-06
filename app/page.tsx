@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { ArrowRight, Heart, MessageCircle, Trophy } from 'lucide-react'
+import { ArrowRight, Heart, MessageCircle, Trophy, Sparkles, BookOpen } from 'lucide-react'
 
 export default function Home() {
   return (
@@ -18,25 +18,108 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-secondary w-full">
+      <section className="py-24 bg-gradient-to-b from-background to-secondary/20">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">我们的特色功能</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <FeatureCard
-              icon={<MessageCircle className="h-10 w-10 text-primary" />}
-              title="聊天分析"
-              description="上传聊天记录，获得AI专业点评，洞察交流技巧"
-            />
-            <FeatureCard
-              icon={<Heart className="h-10 w-10 text-primary" />}
-              title="夸赞生成器"
-              description="上传照片，获得量身定制的夸赞话术，提升交流魅力"
-            />
-            <FeatureCard
-              icon={<Trophy className="h-10 w-10 text-primary" />}
-              title="舔狗排行榜"
-              description="查看你的进步，与其他用户良性竞争，激励自我提升"
-            />
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-4xl font-bold bg-gradient-to-r from-pink-500 to-violet-500 text-transparent bg-clip-text mb-4">
+              我们的特色功能
+            </h2>
+            <p className="text-xl text-muted-foreground">
+              专业的功能设计，帮助你重塑社交关系，找回自我价值
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <Card className="group relative overflow-hidden transition-all hover:shadow-2xl hover:-translate-y-1">
+              <div className="absolute inset-0 bg-gradient-to-r from-pink-500/10 to-violet-500/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+              <CardHeader>
+                <div className="flex items-center space-x-4 mb-2">
+                  <div className="p-2 rounded-full bg-pink-500/10 text-pink-500">
+                    <MessageCircle className="h-6 w-6" />
+                  </div>
+                  <CardTitle>聊天分析</CardTitle>
+                </div>
+                <CardDescription className="text-base">
+                  上传聊天记录，获得AI专业点评，洞察交流技巧，避免社交误区
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Button variant="ghost" className="group-hover:text-pink-500" asChild>
+                  <Link href="/chat-analysis" className="flex items-center">
+                    开始分析
+                    <ArrowRight className="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="group relative overflow-hidden transition-all hover:shadow-2xl hover:-translate-y-1">
+              <div className="absolute inset-0 bg-gradient-to-r from-violet-500/10 to-indigo-500/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+              <CardHeader>
+                <div className="flex items-center space-x-4 mb-2">
+                  <div className="p-2 rounded-full bg-violet-500/10 text-violet-500">
+                    <Sparkles className="h-6 w-6" />
+                  </div>
+                  <CardTitle>夸赞生成器</CardTitle>
+                </div>
+                <CardDescription className="text-base">
+                  上传照片，获得量身定制的夸赞话术，提升交流魅力和表达技巧
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Button variant="ghost" className="group-hover:text-violet-500" asChild>
+                  <Link href="/compliment-generator" className="flex items-center">
+                    立即体验
+                    <ArrowRight className="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="group relative overflow-hidden transition-all hover:shadow-2xl hover:-translate-y-1">
+              <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+              <CardHeader>
+                <div className="flex items-center space-x-4 mb-2">
+                  <div className="p-2 rounded-full bg-indigo-500/10 text-indigo-500">
+                    <BookOpen className="h-6 w-6" />
+                  </div>
+                  <CardTitle>舔狗日记</CardTitle>
+                </div>
+                <CardDescription className="text-base">
+                  记录你的情感历程，AI分析你的进步，帮助你建立健康的情感认知
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Button variant="ghost" className="group-hover:text-indigo-500" asChild>
+                  <Link href="/diary" className="flex items-center">
+                    开始写作
+                    <ArrowRight className="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="group relative overflow-hidden transition-all hover:shadow-2xl hover:-translate-y-1">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+              <CardHeader>
+                <div className="flex items-center space-x-4 mb-2">
+                  <div className="p-2 rounded-full bg-blue-500/10 text-blue-500">
+                    <Trophy className="h-6 w-6" />
+                  </div>
+                  <CardTitle>排行榜</CardTitle>
+                </div>
+                <CardDescription className="text-base">
+                  查看进步排名，与其他用户良性竞争，激励自我提升和成长
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Button variant="ghost" className="group-hover:text-blue-500" asChild>
+                  <Link href="/leaderboard" className="flex items-center">
+                    查看排名
+                    <ArrowRight className="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
